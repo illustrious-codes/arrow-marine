@@ -13,7 +13,7 @@ export default function Careers() {
           <span className={styles.mark} aria-hidden="true" />
           <p className={styles.emptyText}>There are currently no openings.</p>
           <p className={styles.emptySub}>
-            Check back soon, or reach out to us directly — we&rsquo;re always
+            Check back soon, or reach out to us directly, we&rsquo;re always
             glad to hear from experienced shipping professionals.
           </p>
         </div>
