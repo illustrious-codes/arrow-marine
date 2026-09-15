@@ -26,7 +26,7 @@ export default function MarineHero() {
           base management, freight forwarding and customs clearance services,
           and so much more.
         </p>
-        <a className={styles.cta} href="#contact">
+        <a className={styles.cta} href="/contact">
           Contact us
         </a>
       </div>
