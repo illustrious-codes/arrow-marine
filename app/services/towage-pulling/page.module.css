@@ -1,0 +1,209 @@
+/* ArrowMarine — Towage & Pulling Operation
+   Reuses the navy/blue palette with a green working accent. */
+
+.page {
+  --am-navy: #0a1e3c;
+  --am-blue: #0e5aa7;
+  --am-blue-bright: #2b8de0;
+  --am-ice: #eaf1f8;
+  --am-line: rgba(10, 30, 60, 0.12);
+  --am-green: #2f8f5b;
+  --am-green-tint: #e9f5ee;
+
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 72px 0 48px;
+  background: linear-gradient(180deg, var(--am-ice) 0%, #ffffff 100%);
+  border-bottom: 1px solid var(--am-line);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--am-green);
+}
+
+.heading {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 800;
+  color: var(--am-navy);
+  line-height: 1.15;
+}
+
+.intro {
+  max-width: 700px;
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: #3d4b5e;
+}
+
+/* ---------- Fleet ---------- */
+
+.fleet {
+  padding: 56px 0 64px;
+}
+
+.fleetGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+
+.vesselCard {
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px -18px rgba(10, 30, 60, 0.4);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.vesselCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px -16px rgba(10, 30, 60, 0.35);
+}
+
+.vesselHeader {
+  padding: 26px 28px;
+  background: linear-gradient(120deg, var(--am-navy) 0%, var(--am-blue) 100%);
+}
+
+.vesselTag {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--am-navy);
+  background: #ffffff;
+  border-radius: 999px;
+}
+
+.vesselName {
+  margin: 0;
+  font-size: 1.375rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.specList {
+  margin: 0;
+  padding: 22px 28px 26px;
+}
+
+.specRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--am-line);
+}
+
+.specRow:last-child {
+  border-bottom: none;
+}
+
+.specLabel {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #5a6b80;
+}
+
+.specValue {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--am-navy);
+  text-align: right;
+}
+
+/* ---------- CTA ---------- */
+
+.cta {
+  padding: 0 0 80px;
+}
+
+.ctaBox {
+  padding: 40px;
+  border-radius: 14px;
+  background: var(--am-ice);
+  border: 1px solid var(--am-line);
+  text-align: center;
+}
+
+.ctaHeading {
+  margin: 0 0 10px;
+  font-size: clamp(1.375rem, 2.6vw, 1.75rem);
+  font-weight: 800;
+  color: var(--am-navy);
+}
+
+.ctaText {
+  margin: 0 0 22px;
+  font-size: 1rem;
+  color: #3d4b5e;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 12px 28px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--am-navy) 0%, var(--am-blue) 100%);
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 140ms ease, box-shadow 140ms ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -8px rgba(10, 30, 60, 0.4);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 800px) {
+  .fleetGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding: 48px 0 32px;
+  }
+  .fleet {
+    padding: 40px 0 48px;
+  }
+  .vesselHeader {
+    padding: 22px;
+  }
+  .specList {
+    padding: 18px 22px 22px;
+  }
+  .ctaBox {
+    padding: 28px 20px;
+  }
+}

@@ -1,0 +1,80 @@
+/* ArrowMarine — Careers
+   Primary palette stays navy/blue; green appears only as a small
+   accent mark, tying back to the logo without recoloring the brand. */
+
+.section {
+  --am-navy: #0a1e3c;
+  --am-blue: #0e5aa7;
+  --am-green: #2e9e4f;
+  --am-ink-soft: #5a6b80;
+  --am-line: rgba(10, 30, 60, 0.12);
+
+  background: #ffffff;
+  padding: 96px 0 120px;
+}
+
+.inner {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--am-blue);
+}
+
+.heading {
+  margin: 0 0 56px;
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--am-navy);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 48px 32px;
+  border: 1px solid var(--am-line);
+  border-radius: 6px;
+  background: #f6f9fc;
+}
+
+.mark {
+  display: block;
+  width: 8px;
+  height: 8px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  background: var(--am-green);
+}
+
+.emptyText {
+  margin: 0 0 10px;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  color: var(--am-navy);
+}
+
+.emptySub {
+  margin: 0;
+  max-width: 40ch;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--am-ink-soft);
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 64px 0 80px;
+  }
+
+  .empty {
+    padding: 40px 24px;
+  }
+}

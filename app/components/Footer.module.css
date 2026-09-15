@@ -1,0 +1,145 @@
+.footer {
+  --am-navy: #0a1e3c;
+  --am-navy-deep: #061527;
+  --am-blue-bright: #2b8de0;
+  --am-line: rgba(234, 241, 248, 0.14);
+  --am-ink-soft: rgba(234, 241, 248, 0.72);
+
+  background: var(--am-navy);
+  color: #eaf1f8;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 72px 20px 32px;
+}
+
+/* ---------- Contact block ---------- */
+
+.contact {
+  max-width: 640px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--am-blue-bright);
+}
+
+.heading {
+  margin: 0 0 40px;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: #ffffff;
+}
+
+.details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: 1px solid var(--am-line);
+}
+
+.row:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.row dt {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--am-ink-soft);
+}
+
+.row dd {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: #eaf1f8;
+}
+
+.row a {
+  color: #eaf1f8;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(234, 241, 248, 0.35);
+  transition: border-color 140ms ease, color 140ms ease;
+}
+
+.row a:hover {
+  color: var(--am-blue-bright);
+  border-color: var(--am-blue-bright);
+}
+
+.phones {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ---------- Bottom bar ---------- */
+
+.bottom {
+  margin-top: 56px;
+  padding-top: 20px;
+  border-top: 1px solid var(--am-line);
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.8125rem;
+  color: var(--am-ink-soft);
+}
+
+.copyrightLink {
+  color: var(--am-ink-soft);
+  transition: color 140ms ease, text-decoration-color 140ms ease;
+}
+
+.copyrightLink:hover {
+  color: #ffffff;
+  text-decoration-color: #ffffff;
+}
+
+/* ---------- Focus ---------- */
+
+.row a:focus-visible,
+.copyrightLink:focus-visible {
+  outline: 2px solid var(--am-blue-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row a,
+  .copyrightLink {
+    transition: none;
+  }
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (max-width: 560px) {
+  .row {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .inner {
+    padding: 56px 20px 28px;
+  }
+
+  .heading {
+    margin-bottom: 32px;
+  }
+}

@@ -1,0 +1,391 @@
+/* ArrowMarine — navigation bar
+   Palette leans on deep hull navy with a working-blue accent. */
+
+.header {
+  --am-navy: #0a1e3c;
+  --am-blue: #2f8f5b;
+  --am-blue-bright: #2f8f5b;
+  --am-ice: #eaf1f8;
+  --am-line: rgba(10, 30, 60, 0.12);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #ffffff;
+  border-bottom: 1px solid var(--am-line);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.headerScrolled {
+  border-bottom-color: transparent;
+  box-shadow: 0 6px 20px -12px rgba(10, 30, 60, 0.55);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ---------- Brand ---------- */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.logo {
+  width: auto;
+  height: 34px;
+  object-fit: contain;
+}
+
+/* ---------- Desktop nav ---------- */
+
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  position: relative;
+  display: block;
+  padding: 10px 14px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #2c3b50;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: color 140ms ease, background-color 140ms ease;
+}
+
+.navLink:hover {
+  color: var(--am-blue);
+  background: var(--am-ice);
+}
+
+.navLinkActive {
+  color: var(--am-navy);
+  font-weight: 600;
+}
+
+.navLinkActive::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 2px;
+  height: 2px;
+  background: var(--am-blue-bright);
+}
+
+/* ---------- Mobile toggle ---------- */
+
+.toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--am-line);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggleLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.bars {
+  display: block;
+  position: relative;
+  width: 20px;
+  height: 14px;
+}
+
+.bars span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--am-navy);
+  transition: transform 180ms ease, opacity 120ms ease;
+}
+
+.bars span:nth-child(1) {
+  top: 0;
+}
+.bars span:nth-child(2) {
+  top: 6px;
+}
+.bars span:nth-child(3) {
+  top: 12px;
+}
+
+.barsOpen span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.barsOpen span:nth-child(2) {
+  opacity: 0;
+}
+.barsOpen span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ---------- Mobile panel ---------- */
+
+.mobilePanel {
+  display: none;
+  border-top: 1px solid var(--am-line);
+  background: #ffffff;
+  padding: 12px 20px 24px;
+}
+
+.mobilePanelOpen {
+  display: block;
+}
+
+.mobileList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mobileLink {
+  display: block;
+  padding: 14px 4px;
+  font-size: 1.0625rem;
+  color: #2c3b50;
+  text-decoration: none;
+  border-bottom: 1px solid var(--am-line);
+}
+
+.mobileLinkActive {
+  color: var(--am-navy);
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--am-blue-bright);
+  padding-left: 14px;
+}
+
+/* ---------- Focus & motion ---------- */
+
+.brand:focus-visible,
+.navLink:focus-visible,
+.toggle:focus-visible,
+.mobileLink:focus-visible {
+  outline: 2px solid var(--am-blue-bright);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .navLink,
+  .bars span {
+    transition: none;
+  }
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (max-width: 900px) {
+  .desktopNav {
+    display: none;
+  }
+  .toggle {
+    display: inline-flex;
+  }
+  .inner {
+    height: 64px;
+  }
+  .logo {
+    height: 28px;
+  }
+}
+
+/* ---------- Services dropdown (desktop) ---------- */
+
+.navItemWithChildren {
+  position: relative;
+}
+
+.navLinkTrigger {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.caret {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+  margin-top: -2px;
+}
+
+.caretOpen {
+  transform: rotate(-135deg);
+  margin-top: 2px;
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 260px;
+  margin: 0;
+  padding: 8px;
+  list-style: none;
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 8px;
+  box-shadow: 0 16px 32px -16px rgba(10, 30, 60, 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms;
+}
+
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 20px;
+  width: 12px;
+  height: 12px;
+  background: #ffffff;
+  border-left: 1px solid var(--am-line);
+  border-top: 1px solid var(--am-line);
+  transform: rotate(45deg);
+}
+
+.dropdownOpen {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdownLink {
+  display: block;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2c3b50;
+  text-decoration: none;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+  transition: background-color 140ms ease, border-color 140ms ease,
+    color 140ms ease;
+}
+
+.dropdownLink:hover {
+  background: var(--am-ice);
+  color: var(--am-blue);
+  border-left-color: #2f8f5b; /* green accent */
+}
+
+.dropdownLinkActive {
+  color: var(--am-navy);
+  font-weight: 600;
+  border-left-color: #2f8f5b;
+  background: var(--am-ice);
+}
+
+/* ---------- Services accordion (mobile) ---------- */
+
+.mobileParentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--am-line);
+}
+
+.mobileParentLink {
+  border-bottom: none;
+  flex: 1;
+}
+
+.mobileCaretBtn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.mobileCaretBtn span {
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--am-navy);
+  border-bottom: 2px solid var(--am-navy);
+  transform: rotate(45deg);
+  transition: transform 160ms ease;
+}
+
+.mobileCaretBtnOpen span {
+  transform: rotate(-135deg);
+}
+
+.mobileSubList {
+  max-height: 0;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 16px;
+  transition: max-height 220ms ease;
+}
+
+.mobileSubListOpen {
+  max-height: 200px;
+}
+
+.mobileSubLink {
+  display: block;
+  padding: 12px 4px;
+  font-size: 0.9375rem;
+  color: #4a5b70;
+  text-decoration: none;
+  border-bottom: 1px solid var(--am-line);
+  border-left: 2px solid transparent;
+  padding-left: 10px;
+}
+
+.mobileSubLinkActive {
+  color: var(--am-navy);
+  font-weight: 600;
+  border-left-color: #2f8f5b;
+}

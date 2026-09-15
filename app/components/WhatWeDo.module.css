@@ -1,0 +1,120 @@
+/* ArrowMarine — What We Do
+   Same hull-navy / working-blue palette as the navbar and footer. */
+
+.section {
+  --am-navy: #0a1e3c;
+  --am-blue: #2f8f5b;
+  --am-blue-bright: #2b8de0;
+  --am-ink-soft: #5a6b80;
+  --am-line: rgba(10, 30, 60, 0.1);
+
+  background: #ffffff;
+  padding: 88px 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---------- Intro ---------- */
+
+.intro {
+  max-width: 560px;
+  margin: 0 0 48px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--am-blue);
+}
+
+.heading {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: var(--am-navy);
+}
+
+/* ---------- Grid ---------- */
+
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px 24px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--am-line);
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 220ms ease;
+}
+
+.card:hover .image {
+  transform: scale(1.04);
+}
+
+.name {
+  margin: 14px 2px 0;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--am-navy);
+  line-height: 1.4;
+}
+
+/* ---------- Focus & motion ---------- */
+
+.card:focus-within .image {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .image {
+    transition: none;
+  }
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (max-width: 980px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .grid {
+    gap: 24px 16px;
+  }
+}

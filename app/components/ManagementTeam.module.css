@@ -1,0 +1,115 @@
+/* ArrowMarine — Management Team */
+
+.section {
+  --am-navy: #0a1e3c;
+  --am-blue: #0e5aa7;
+  --am-blue-bright: #2b8de0;
+  --am-ink-soft: #5a6b80;
+  --am-line: rgba(10, 30, 60, 0.12);
+
+  background: #f6f9fc;
+  padding: 80px 0 96px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heading {
+  margin: 0 0 40px;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--am-navy);
+}
+
+.grid {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 4px;
+  padding: 28px 24px;
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--am-navy);
+  color: #ffffff;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.name {
+  margin: 0 0 4px;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--am-navy);
+}
+
+.title {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--am-blue);
+  font-weight: 500;
+}
+
+.contact {
+  margin: 16px 0 0;
+  padding: 16px 0 0;
+  list-style: none;
+  border-top: 1px solid var(--am-line);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact a {
+  font-size: 0.875rem;
+  color: var(--am-ink-soft);
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.contact a:hover {
+  color: var(--am-blue-bright);
+}
+
+.contact a:focus-visible {
+  outline: 2px solid var(--am-blue-bright);
+  outline-offset: 2px;
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section {
+    padding: 56px 0 64px;
+  }
+}

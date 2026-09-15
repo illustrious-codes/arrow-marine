@@ -1,0 +1,109 @@
+/* ArrowMarine — Why Choose Us
+   Same hull-navy / working-blue palette as the rest of the site. */
+
+.section {
+  --am-navy: #0a1e3c;
+  --am-blue: #2f8f5b;
+  --am-blue-bright: #2b8de0;
+  --am-ink-soft: #5a6b80;
+  --am-line: rgba(10, 30, 60, 0.12);
+
+  background: #f6f9fc;
+  padding: 88px 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 56px;
+  align-items: center;
+}
+
+/* ---------- Image ---------- */
+
+.imageCol {
+  position: relative;
+}
+
+.imageWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.imageWrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(10, 30, 60, 0.08);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* ---------- Content ---------- */
+
+.eyebrow {
+  margin: 0 0 40px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--am-blue);
+}
+
+.reasons {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.reason {
+  padding-top: 28px;
+  border-top: 1px solid var(--am-line);
+}
+
+.reason:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.reasonTitle {
+  margin: 0 0 10px;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--am-navy);
+}
+
+.reasonBody {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--am-ink-soft);
+  max-width: 46ch;
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .imageWrap {
+    aspect-ratio: 16 / 10;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+}

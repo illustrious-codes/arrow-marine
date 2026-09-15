@@ -1,0 +1,217 @@
+/* ArrowMarine — Contact Us
+   Blue stays the dominant color; green shows up as the field focus
+   state and the confirmation message, echoing the footer's accent. */
+
+.section {
+  --am-navy: #0a1e3c;
+  --am-blue: #0e5aa7;
+  --am-green: #2e9e4f;
+  --am-green-bright: #3fbf68;
+  --am-ink-soft: #5a6b80;
+  --am-line: rgba(10, 30, 60, 0.14);
+
+  background: #ffffff;
+  padding: 96px 0 120px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 64px;
+}
+
+/* ---------- Info column ---------- */
+
+.eyebrow {
+  margin: 0 0 10px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--am-blue);
+}
+
+.heading {
+  margin: 0 0 40px;
+  font-size: clamp(2rem, 3.6vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--am-navy);
+}
+
+.details {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.row {
+  padding-top: 24px;
+  border-top: 1px solid var(--am-line);
+}
+
+.row:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+.row dt {
+  margin: 0 0 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--am-ink-soft);
+}
+
+.row dd {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: var(--am-navy);
+}
+
+.row a {
+  color: var(--am-navy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--am-line);
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.row a:hover {
+  color: var(--am-green);
+  border-color: var(--am-green);
+}
+
+.emails {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* ---------- Form column ---------- */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 36px;
+  background: #f6f9fc;
+  border: 1px solid var(--am-line);
+  border-radius: 6px;
+}
+
+.fieldRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--am-navy);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.9375rem;
+  font-family: inherit;
+  color: var(--am-navy);
+  background: #ffffff;
+  border: 1px solid var(--am-line);
+  border-radius: 4px;
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  outline: none;
+  border-color: var(--am-green-bright);
+  box-shadow: 0 0 0 3px rgba(63, 191, 104, 0.18);
+}
+
+.submit {
+  align-self: flex-start;
+  padding: 13px 28px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--am-blue);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 140ms ease;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--am-navy);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit:focus-visible {
+  outline: 2px solid var(--am-green-bright);
+  outline-offset: 2px;
+}
+
+.confirmation {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--am-green);
+}
+
+.errorText {
+  margin: 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #c0392b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field input,
+  .field textarea,
+  .submit {
+    transition: none;
+  }
+}
+
+/* ---------- Breakpoints ---------- */
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 64px 0 80px;
+  }
+
+  .fieldRow {
+    grid-template-columns: 1fr;
+  }
+
+  .form {
+    padding: 24px;
+  }
+}
