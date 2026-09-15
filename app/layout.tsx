@@ -30,13 +30,13 @@ export const metadata: Metadata = {
     description:
       "Arrow Marine provides comprehensive marine shipping and vessel agency services in Nigeria, supporting shipowners, charterers and traders with port formalities, pilotage, mooring, cargo operations, customs clearance and vessel support.",
 
-    url: "https://your-arrow-marine-website-url.com/",
+    url: "https://arrow-marinelimited.vercel.app/",
 
     siteName: "Arrow Marine",
 
     images: [
       {
-        url: "https://your-arrow-marine-website-url.com/images/meta.jpg",
+        url: "https://arrow-marinelimited.vercel.app/images/meta.jpg",
         width: 1200,
         height: 630,
       },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     description:
       "Reliable marine shipping and vessel agency services in Nigeria, supporting shipowners, charterers and traders with port operations, pilotage, mooring, cargo handling, customs clearance and vessel support.",
 
-    images: ["https://your-arrow-marine-website-url.com/images/meta.jpg"],
+    images: ["https://arrow-marinelimited.vercel.app/images/meta.jpg"],
   },
 };
 
