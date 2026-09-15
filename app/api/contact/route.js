@@ -1,9 +1,8 @@
 import nodemailer from "nodemailer";
 
 const RECIPIENTS = [
-  //   "ops@arrowmarinelimited.com",
-  //   "mgmt@arrowmarinelimited.com",
-  "onatayodavid101@gmail.com",
+  "ops@arrowmarinelimited.com",
+  "mgmt@arrowmarinelimited.com",
 ];
 
 export async function POST(request) {
