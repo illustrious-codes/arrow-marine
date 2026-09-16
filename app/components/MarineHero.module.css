@@ -1,62 +1,66 @@
-.hero {
+.carousel {
   position: relative;
-  min-height: 85vh;
   width: 100%;
+  min-height: 100vh;
   overflow: hidden;
-  display: flex;
-  align-items: center;
   background: #0a2436;
 }
 
-.heroImage {
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s ease, visibility 0s linear 1s;
+  z-index: 1;
+}
+
+.slideActive {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1s ease;
+  z-index: 2;
+}
+
+.slideImage {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center 40%;
 }
 
-.heroOverlay {
+.slideOverlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
       180deg,
-      rgba(10, 36, 54, 0.15) 0%,
-      rgba(10, 36, 54, 0.05) 30%,
-      rgba(10, 36, 54, 0.72) 68%,
-      rgba(10, 36, 54, 0.94) 100%
-    ),
-    linear-gradient(
-      90deg,
       rgba(10, 36, 54, 0.55) 0%,
-      rgba(10, 36, 54, 0.15) 42%,
-      rgba(10, 36, 54, 0) 60%
+      rgba(10, 36, 54, 0.38) 40%,
+      rgba(10, 36, 54, 0.6) 100%
+    ),
+    radial-gradient(
+      60% 60% at 50% 50%,
+      rgba(10, 36, 54, 0.15) 0%,
+      rgba(10, 36, 54, 0.55) 100%
     );
 }
 
-.heroContent {
+.slideContent {
   position: relative;
   z-index: 2;
+  height: 100%;
+  min-height: 100vh;
   width: 100%;
-  padding: 6vh 6vw 7vh;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 6vh 7vw;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  max-width: 760px;
-  opacity: 0;
-  animation: rise 0.9s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
-}
-
-@keyframes rise {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .leadIn {
@@ -71,8 +75,8 @@
 .heading {
   font-family: var(--font-display, "Big Shoulders Display", sans-serif);
   font-weight: 700;
-  font-size: clamp(2.6rem, 6.4vw, 5.2rem);
-  line-height: 0.98;
+  font-size: clamp(2.3rem, 5.2vw, 4.2rem);
+  line-height: 1.02;
   letter-spacing: 0.2px;
   color: #f3f8f7;
   margin: 0;
@@ -82,33 +86,18 @@
   width: 84px;
   height: 4px;
   background: #2f9e78;
-  margin: 1.4rem 0 1.5rem;
+  margin: 1.2rem 0 1.3rem;
   border-radius: 2px;
-}
-
-.subhead {
-  font-family: var(--font-body, "Inter", sans-serif);
-  font-weight: 500;
-  font-size: clamp(1.15rem, 2.1vw, 1.5rem);
-  color: #f3f8f7;
-  line-height: 1.4;
-  max-width: 34ch;
-  margin: 0 0 1.1rem;
 }
 
 .bodyText {
   font-family: var(--font-body, "Inter", sans-serif);
-  font-weight: 400;
-  font-size: clamp(0.98rem, 1.3vw, 1.08rem);
-  color: #b7cbd8;
-  line-height: 1.65;
-  max-width: 52ch;
-  margin: 0 0 2.1rem;
-}
-
-.bodyText strong {
+  font-weight: 500;
+  font-size: clamp(1.05rem, 1.8vw, 1.3rem);
   color: #f3f8f7;
-  font-weight: 600;
+  line-height: 1.55;
+  max-width: 46ch;
+  margin: 0 0 1.8rem;
 }
 
 .cta {
@@ -138,24 +127,90 @@
   outline-offset: 3px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .heroContent {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
+/* Arrows */
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 36, 54, 0.35);
+  color: #f3f8f7;
+  border: 1px solid rgba(243, 248, 247, 0.35);
+  border-radius: 50%;
+  cursor: pointer;
+  backdrop-filter: blur(3px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.navButton:hover {
+  background: rgba(47, 158, 120, 0.85);
+  border-color: #2f9e78;
+}
+
+.navButton:focus-visible {
+  outline: 3px solid #f3f8f7;
+  outline-offset: 2px;
+}
+
+.navPrev {
+  left: 5vw;
+}
+
+.navNext {
+  right: 5vw;
+}
+
+/* Dots */
+.dots {
+  position: absolute;
+  bottom: 6vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(243, 248, 247, 0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.dot:hover {
+  background: rgba(243, 248, 247, 0.7);
+}
+
+.dotActive {
+  background: #2f9e78;
+  transform: scale(1.25);
 }
 
 @media (max-width: 640px) {
-  .heroContent {
-    padding: 5vh 6vw 6vh;
-    max-width: 100%;
+  .slideContent {
+    padding: 5vh 8vw;
   }
-  .subhead,
-  .bodyText {
-    max-width: 100%;
+  .navButton {
+    width: 40px;
+    height: 40px;
   }
-  .heroImage {
-    object-position: 62% 40%;
+  .navPrev {
+    left: 3vw;
+  }
+  .navNext {
+    right: 3vw;
+  }
+  .dots {
+    bottom: 4vh;
   }
 }

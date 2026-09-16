@@ -1,11 +1,12 @@
 .footer {
-  --am-navy: #0a1e3c;
-  --am-navy-deep: #061527;
-  --am-blue-bright: #2b8de0;
+  --am-bg: #0a201b;
+  --am-bg-deep: #061410;
+  --am-green: #2f9e78;
+  --am-blue-touch: #3a8fd6;
   --am-line: rgba(234, 241, 248, 0.14);
   --am-ink-soft: rgba(234, 241, 248, 0.72);
 
-  background: var(--am-navy);
+  background: var(--am-bg);
   color: #eaf1f8;
 }
 
@@ -25,7 +26,7 @@
   margin: 0 0 10px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--am-blue-bright);
+  color: var(--am-green);
 }
 
 .heading {
@@ -78,8 +79,8 @@
 }
 
 .row a:hover {
-  color: var(--am-blue-bright);
-  border-color: var(--am-blue-bright);
+  color: var(--am-green);
+  border-color: var(--am-green);
 }
 
 .phones {
@@ -108,15 +109,15 @@
 }
 
 .copyrightLink:hover {
-  color: #ffffff;
-  text-decoration-color: #ffffff;
+  color: var(--am-blue-touch);
+  text-decoration-color: var(--am-blue-touch);
 }
 
 /* ---------- Focus ---------- */
 
 .row a:focus-visible,
 .copyrightLink:focus-visible {
-  outline: 2px solid var(--am-blue-bright);
+  outline: 2px solid var(--am-blue-touch);
   outline-offset: 2px;
 }
 
