@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Arrow Marine provides reliable marine shipping and vessel agency services in Nigeria, supporting shipowners, charterers and traders with port operations, cargo handling, customs clearance, pilotage, mooring and other shipping services.",
 
-  icons: "/images/arrow_marine_logo.png",
+  icons: "/images/arrow_512.png",
 
   openGraph: {
     type: "website",
