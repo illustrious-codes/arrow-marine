@@ -18,9 +18,10 @@ const SLIDES = [
     image: "/images/arrow-banner1.jpg",
     alt: "An offshore platform and supply vessel at sea",
     leadIn: null,
-    heading: "Efficient and smooth port operations",
+    heading: "Efficient and Smooth Port Operations",
     text: "Supply base management, freight forwarding and customs clearance services, and so much more.",
     cta: "Contact us",
+    headingCompact: true, // slightly smaller heading font so it fits on 1 line on desktop
   },
 ];
 
@@ -37,7 +38,6 @@ export default function MarineCarousel() {
   const goPrev = useCallback(() => goTo(active - 1), [active, goTo]);
   const goNext = useCallback(() => goTo(active + 1), [active, goTo]);
 
-  // Autoplay, restarts whenever the active slide changes (including manual nav)
   useEffect(() => {
     timerRef.current = setInterval(() => {
       setActive((current) => (current + 1) % SLIDES.length);
@@ -66,9 +66,19 @@ export default function MarineCarousel() {
           />
           <div className={styles.slideOverlay} />
 
-          <div className={styles.slideContent}>
+          <div
+            className={`${styles.slideContent} ${
+              slide.headingCompact ? styles.slideContentWide : ""
+            }`}
+          >
             {slide.leadIn && <p className={styles.leadIn}>{slide.leadIn}</p>}
-            <h1 className={styles.heading}>{slide.heading}</h1>
+            <h1
+              className={`${styles.heading} ${styles.headingNoWrap} ${
+                slide.headingCompact ? styles.headingCompact : ""
+              }`}
+            >
+              {slide.heading}
+            </h1>
             <div className={styles.rule} />
             <p className={styles.bodyText}>{slide.text}</p>
             <Link className={styles.cta} href="/contact">

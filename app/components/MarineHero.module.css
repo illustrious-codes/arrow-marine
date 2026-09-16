@@ -196,6 +196,25 @@
   transform: scale(1.25);
 }
 
+.forceBreak {
+  display: none;
+}
+
+@media (min-width: 641px) {
+  .headingNoWrap {
+    white-space: nowrap;
+  }
+
+  /* Wider container + smaller font so the longer heading still fits on 1 line */
+  .slideContentWide {
+    max-width: 1100px;
+  }
+
+  .headingCompact {
+    font-size: clamp(1.8rem, 3.6vw, 3.1rem);
+  }
+}
+
 @media (max-width: 640px) {
   .slideContent {
     padding: 5vh 8vw;
