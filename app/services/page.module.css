@@ -1,13 +1,9 @@
-/* ArrowMarine — services page
-   Reuses the navy/blue palette from the navbar, with a green working accent. */
-
 .page {
-  --am-navy: #0a1e3c;
-  --am-blue: #0e5aa7;
-  --am-blue-bright: #2b8de0;
+  --am-navy: #1f7a5c;
+  --am-green: #2f9e78;
+  --am-green-deep: #1f7a5c;
   --am-ice: #eaf1f8;
   --am-line: rgba(10, 30, 60, 0.12);
-  --am-green: #2f8f5b;
   --am-green-tint: #e9f5ee;
 
   background: #ffffff;
@@ -84,7 +80,7 @@
   width: 36px;
   height: 4px;
   border-radius: 2px;
-  background: linear-gradient(90deg, var(--am-blue), var(--am-green));
+  background: linear-gradient(90deg, var(--am-green), var(--am-green-deep));
   margin-bottom: 18px;
 }
 
@@ -187,7 +183,11 @@
 .ctaBox {
   padding: 40px;
   border-radius: 14px;
-  background: linear-gradient(120deg, var(--am-navy) 0%, var(--am-blue) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--am-green) 0%,
+    var(--am-green-deep) 100%
+  );
   text-align: center;
 }
 
@@ -201,7 +201,7 @@
 .ctaText {
   margin: 0 0 22px;
   font-size: 1rem;
-  color: #d7e6f5;
+  color: #d9f0e5;
 }
 
 .ctaButton {
@@ -209,7 +209,7 @@
   padding: 12px 28px;
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--am-navy);
+  color: var(--am-green-deep);
   background: #ffffff;
   border-radius: 6px;
   text-decoration: none;

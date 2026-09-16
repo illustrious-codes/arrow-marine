@@ -1,13 +1,12 @@
 /* ArrowMarine — Careers
-   Primary palette stays navy/blue; green appears only as a small
-   accent mark, tying back to the logo without recoloring the brand. */
+   Green is the dominant brand color; navy stays for headings and body text. */
 
 .section {
-  --am-navy: #0a1e3c;
-  --am-blue: #0e5aa7;
-  --am-green: #2e9e4f;
+  --am-navy: #145c39;
+  --am-green: #1f7a4d;
+  --am-green-dark: #145c39;
   --am-ink-soft: #5a6b80;
-  --am-line: rgba(10, 30, 60, 0.12);
+  --am-line: rgba(20, 92, 57, 0.14);
 
   background: #ffffff;
   padding: 96px 0 120px;
@@ -24,7 +23,7 @@
   margin: 0 0 10px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--am-blue);
+  color: var(--am-green);
 }
 
 .heading {
@@ -42,7 +41,7 @@
   padding: 48px 32px;
   border: 1px solid var(--am-line);
   border-radius: 6px;
-  background: #f6f9fc;
+  background: #f6faf7;
 }
 
 .mark {

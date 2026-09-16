@@ -2,7 +2,7 @@
 
 .section {
   --am-navy: #0a1e3c;
-  --am-blue: #2f8f5b;
+  --am-green: #2f9e78;
   --am-ink-soft: #38495e;
 
   background: #ffffff;
@@ -19,15 +19,23 @@
   margin: 0 0 10px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--am-blue);
+  color: var(--am-green);
 }
 
 .heading {
-  margin: 0 0 32px;
+  margin: 0 0 20px;
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--am-navy);
+}
+
+.rule {
+  width: 64px;
+  height: 4px;
+  background: var(--am-green);
+  border-radius: 2px;
+  margin: 0 0 32px;
 }
 
 .body {
@@ -41,6 +49,11 @@
   font-size: 1.0625rem;
   line-height: 1.75;
   color: var(--am-ink-soft);
+}
+
+.body p:first-child::first-letter {
+  color: var(--am-green);
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {

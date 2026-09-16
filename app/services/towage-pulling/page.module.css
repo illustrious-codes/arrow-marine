@@ -1,14 +1,13 @@
 /* ArrowMarine — Towage & Pulling Operation
-   Reuses the navy/blue palette with a green working accent. */
+   Green-forward brand palette, with navy as a supporting accent. */
 
 .page {
+  --am-green: #1f7a4d;
+  --am-green-dark: #145c39;
+  --am-green-bright: #2fa768;
+  --am-green-tint: #e8f5ee;
   --am-navy: #0a1e3c;
-  --am-blue: #0e5aa7;
-  --am-blue-bright: #2b8de0;
-  --am-ice: #eaf1f8;
-  --am-line: rgba(10, 30, 60, 0.12);
-  --am-green: #2f8f5b;
-  --am-green-tint: #e9f5ee;
+  --am-line: rgba(20, 92, 57, 0.14);
 
   background: #ffffff;
 }
@@ -23,7 +22,7 @@
 
 .hero {
   padding: 72px 0 48px;
-  background: linear-gradient(180deg, var(--am-ice) 0%, #ffffff 100%);
+  background: linear-gradient(180deg, var(--am-green-tint) 0%, #ffffff 100%);
   border-bottom: 1px solid var(--am-line);
 }
 
@@ -70,18 +69,22 @@
   border: 1px solid var(--am-line);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 10px 24px -18px rgba(10, 30, 60, 0.4);
+  box-shadow: 0 10px 24px -18px rgba(20, 92, 57, 0.35);
   transition: transform 160ms ease, box-shadow 160ms ease;
 }
 
 .vesselCard:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px -16px rgba(10, 30, 60, 0.35);
+  box-shadow: 0 16px 32px -16px rgba(20, 92, 57, 0.3);
 }
 
 .vesselHeader {
   padding: 26px 28px;
-  background: linear-gradient(120deg, var(--am-navy) 0%, var(--am-blue) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--am-green-dark) 0%,
+    var(--am-green) 100%
+  );
 }
 
 .vesselTag {
@@ -92,7 +95,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--am-navy);
+  color: var(--am-green-dark);
   background: #ffffff;
   border-radius: 999px;
 }
@@ -147,7 +150,7 @@
 .ctaBox {
   padding: 40px;
   border-radius: 14px;
-  background: var(--am-ice);
+  background: var(--am-green-tint);
   border: 1px solid var(--am-line);
   text-align: center;
 }
@@ -171,7 +174,11 @@
   font-size: 0.9375rem;
   font-weight: 700;
   color: #ffffff;
-  background: linear-gradient(120deg, var(--am-navy) 0%, var(--am-blue) 100%);
+  background: linear-gradient(
+    120deg,
+    var(--am-green-dark) 0%,
+    var(--am-green) 100%
+  );
   border-radius: 6px;
   text-decoration: none;
   transition: transform 140ms ease, box-shadow 140ms ease;
@@ -179,7 +186,7 @@
 
 .ctaButton:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px -8px rgba(10, 30, 60, 0.4);
+  box-shadow: 0 10px 20px -8px rgba(20, 92, 57, 0.4);
 }
 
 /* ---------- Responsive ---------- */

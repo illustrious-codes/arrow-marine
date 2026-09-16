@@ -8,6 +8,7 @@ export default function WhoWeAre() {
         <h1 id="who-we-are-heading" className={styles.heading}>
           Who we are
         </h1>
+        <div className={styles.rule} />
 
         <div className={styles.body}>
           <p>

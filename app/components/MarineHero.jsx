@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./MarineHero.module.css";
 
 const SLIDES = [
@@ -70,9 +71,9 @@ export default function MarineCarousel() {
             <h1 className={styles.heading}>{slide.heading}</h1>
             <div className={styles.rule} />
             <p className={styles.bodyText}>{slide.text}</p>
-            <a className={styles.cta} href="#contact">
+            <Link className={styles.cta} href="/contact">
               {slide.cta}
-            </a>
+            </Link>
           </div>
         </div>
       ))}

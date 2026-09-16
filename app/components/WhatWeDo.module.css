@@ -1,7 +1,6 @@
 .section {
   --am-navy: #0a1e3c;
-  --am-blue: #2f8f5b;
-  --am-blue-bright: #2b8de0;
+  --am-green: #2f9e78;
   --am-ink-soft: #5a6b80;
   --am-line: rgba(10, 30, 60, 0.1);
 
@@ -26,7 +25,7 @@
   margin: 0 0 10px;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: var(--am-blue);
+  color: var(--am-green);
 }
 
 .heading {
