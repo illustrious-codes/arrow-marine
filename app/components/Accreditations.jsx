@@ -7,18 +7,22 @@ const ACCREDITATIONS = [
   { src: "/images/accreditations/npa.jpg", name: "Nigerian Ports Authority" },
   {
     src: "/images/accreditations/nimasa.jpg",
+    alt: "NMASA",
     name: "Nigerian Maritime Administration and Safety Agency",
   },
   {
     src: "/images/accreditations/customs.jpg",
+    alt: "NCS",
     name: "Nigeria Customs Service",
   },
   {
     src: "/images/accreditations/immigration.png",
+    alt: "NIS",
     name: "Nigeria Immigration Service",
   },
   {
     src: "/images/accreditations/dpr.png",
+    alt: "DPR",
     name: "Department of Petroleum Resources",
   },
 ];
